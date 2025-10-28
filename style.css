@@ -1,0 +1,711 @@
+:root {
+    /* Palet Warna Default (Light Mode) */
+    --color-primary: #004d99; /* Biru Tua/Navy, Nuansa Jepang */
+    --color-secondary: #007bff; /* Biru Neon/Accent */
+    --color-text: #333333;
+    --color-background: #f4f7f6; /* Off-White/Clean Light */
+    --color-card-bg: #ffffff;
+    --color-border: #e0e0e0;
+    --color-shadow: rgba(0, 0, 0, 0.08);
+
+    /* Tema Gelap (Dark Mode) - Akan diubah oleh JS */
+    --dark-primary: #8aa8c0; /* Biru Muda Pucat */
+    --dark-secondary: #4a90e2; /* Biru Accent */
+    --dark-text: #e0e6ec;
+    --dark-background: #1a202c; /* Hampir Hitam */
+    --dark-card-bg: #2d3748;
+    --dark-border: #4a5568;
+    --dark-shadow: rgba(0, 0, 0, 0.4);
+
+    /* Transisi Mulus */
+    --transition-fast: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Ease-out/smooth */
+    --transition-slow: 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* === Tema Gelap (Dark Mode) Override === */
+body[data-theme='dark'] {
+    --color-primary: var(--dark-primary);
+    --color-secondary: var(--dark-secondary);
+    --color-text: var(--dark-text);
+    --color-background: var(--dark-background);
+    --color-card-bg: var(--dark-card-bg);
+    --color-border: var(--dark-border);
+    --color-shadow: var(--dark-shadow);
+}
+
+/* === Base Styling & Font === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ⚠️ PENTING UNTUK CENTERING LOGIN CARD ⚠️ */
+html, body {
+    height: 100%;
+    overflow-x: hidden; /* Hindari scroll horizontal */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    transition: background-color var(--transition-slow), color var(--transition-slow);
+    line-height: 1.7;
+}
+
+h1, h2, h3 {
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-secondary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary);
+}
+
+/* === Header Transparan Blur (Glassmorphism) === */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    z-index: 1000;
+    /* Efek Transparan Blur */
+    background-color: rgba(255, 255, 255, 0.3); /* Sedikit transparan */
+    backdrop-filter: blur(10px); /* Efek blur */
+    border-bottom: 1px solid var(--color-border);
+    transition: background-color var(--transition-slow), border-color var(--transition-slow);
+}
+
+body[data-theme='dark'] .main-header {
+    background-color: rgba(26, 32, 44, 0.8);
+}
+
+.logo a {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-primary);
+}
+
+.accent-dot {
+    color: var(--color-secondary);
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-link {
+    font-weight: 600;
+    position: relative;
+    padding: 0.3rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-secondary);
+    transition: width var(--transition-fast), left var(--transition-fast);
+}
+
+.nav-link:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: transform var(--transition-fast);
+}
+
+.nav-button:hover {
+    transform: rotate(10deg) scale(1.1);
+}
+
+/* === Hero Section === */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 5% 4rem; /* Padding atas untuk header fixed */
+    background: linear-gradient(135deg, var(--color-background) 0%, #d8e3e7 100%);
+    transition: background var(--transition-slow);
+}
+
+body[data-theme='dark'] .hero-section {
+    background: linear-gradient(135deg, var(--dark-background) 0%, #0f131a 100%);
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+}
+
+.uvp-text {
+    font-style: italic;
+    margin: 1.5rem auto;
+    max-width: 800px;
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    margin-top: 2rem;
+    background-color: var(--color-secondary);
+    color: white;
+    font-weight: 700;
+    border-radius: 50px;
+    letter-spacing: 1px;
+    box-shadow: 0 10px 20px rgba(0, 123, 255, 0.3);
+    transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(0, 123, 255, 0.5);
+}
+
+.arrow {
+    margin-left: 0.5rem;
+    transition: margin-left var(--transition-fast);
+}
+
+.cta-button:hover .arrow {
+    margin-left: 1rem;
+}
+
+/* === Pilar Konten Overview === */
+.content-overview {
+    padding: 4rem 5%;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 3px solid var(--color-secondary);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin-bottom: 3rem;
+    opacity: 0.8;
+}
+
+.pilar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.pilar-card {
+    background-color: var(--color-card-bg);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--color-shadow);
+    text-align: left;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-slow);
+    border-left: 5px solid var(--color-secondary);
+}
+
+.pilar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--color-shadow);
+}
+
+.pilar-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--color-secondary);
+}
+
+.pilar-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+}
+
+.pilar-card p {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.pilar-link {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+/* === Bagian "Mulai dari Mana?" === */
+.start-guide {
+    padding: 6rem 5%;
+    text-align: center;
+    background-color: var(--color-border); /* Warna sedikit berbeda */
+    transition: background-color var(--transition-slow);
+}
+
+body[data-theme='dark'] .start-guide {
+    background-color: var(--dark-border);
+}
+
+.start-guide h2 {
+    color: var(--color-primary);
+}
+
+.guide-options {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 3rem;
+    flex-wrap: wrap; /* Menambahkan flex-wrap untuk responsif */
+}
+
+.guide-card {
+    background-color: var(--color-card-bg);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--color-shadow);
+    width: 350px;
+    text-align: left;
+    transition: transform var(--transition-fast);
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+}
+
+.guide-card h3 {
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+}
+
+.guide-card ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.guide-card li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.guide-card li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-secondary);
+    font-weight: bold;
+}
+
+.guide-cta {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--color-primary);
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+}
+
+.guide-cta:hover {
+    background-color: #003366;
+    color: white; /* Pertahankan warna teks putih saat hover */
+}
+
+
+/* === Footer === */
+footer {
+    background-color: var(--color-primary);
+    color: white;
+    padding: 3rem 5% 1rem;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 2rem;
+}
+
+.footer-nav, .newsletter-section {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-nav h4, .newsletter-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--dark-primary); /* Menggunakan warna terang dari tema gelap */
+}
+
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-nav a {
+    color: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    margin-bottom: 0.5rem;
+}
+
+.footer-nav a:hover {
+    color: white;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 1rem;
+    max-width: 350px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 0.7rem 1rem;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.newsletter-form .submit-button {
+    padding: 0.7rem 1.2rem;
+    border: none;
+    background-color: var(--color-secondary);
+    color: white;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+}
+
+.newsletter-form .submit-button:hover {
+    background-color: #0056b3;
+}
+
+.footer-bottom {
+    text-align: center;
+    opacity: 0.7;
+}
+
+.footer-bottom p {
+    margin-top: 0.5rem;
+}
+
+/* --- Feedback Formulir Newsletter (BARU DITAMBAHKAN) --- */
+.form-feedback {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.form-feedback.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.form-feedback.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+body[data-theme='dark'] .form-feedback.error {
+    background-color: #3d1f1f;
+    color: #ffbaba;
+}
+
+body[data-theme='dark'] .form-feedback.success {
+    background-color: #1f3d2a;
+    color: #a3f7b5;
+}
+
+/* === ANIMASI MUNCUL SAAT SCROLL (BARU DITAMBAHKAN) === */
+/* Base state for all animated elements (should be hidden initially) */
+/* Kelas ini harus ditambahkan ke semua elemen yang ingin dianimasikan di HTML */
+.fade-in-up,
+.slide-in-left,
+.slide-in-right,
+.scale-in,
+.shift-left,
+.slide-in-up {
+    opacity: 0;
+    transform: translateY(20px); /* Default ke fade-in-up */
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+/* Override transform untuk animasi tertentu */
+.slide-in-left {
+    transform: translateX(-50px);
+}
+
+.slide-in-right {
+    transform: translateX(50px);
+}
+
+.scale-in {
+    transform: scale(0.95);
+    transition: opacity 0.8s cubic-bezier(0.17, 0.84, 0.44, 1), transform 0.8s cubic-bezier(0.17, 0.84, 0.44, 1);
+}
+
+.shift-left {
+    transform: translateX(-20px);
+}
+
+.slide-in-up {
+    transform: translateY(20px);
+}
+
+/* State ketika elemen terlihat */
+.visible {
+    opacity: 1;
+    transform: none; /* Kembali ke posisi aslinya */
+}
+
+/* Delay Animasi (Hanya berfungsi ketika JS menambahkan kelas 'visible') */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+
+
+/* Responsif Dasar */
+@media (max-width: 768px) {
+    .main-header {
+        flex-direction: column;
+        padding: 0.8rem 5%;
+        text-align: center;
+    }
+
+    .main-nav ul {
+        margin-top: 0.5rem;
+        gap: 1rem;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+    
+    .guide-options {
+        gap: 1.5rem;
+    }
+
+    .guide-card {
+        width: 100%;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .newsletter-section {
+        margin-top: 2rem;
+    }
+}
+
+/* --- MEDIA QUERY TAMBAHAN UNTUK TABLET (BARU DITAMBAHKAN) --- */
+@media (max-width: 900px) {
+    /* Mengubah grid dari 3 kolom ke 2 kolom untuk tablet */
+    .pilar-grid,
+    .language-grid,
+    .tier-list-grid,
+    .platform-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 1.5rem;
+    }
+    
+    /* Memastikan langkah panduan terlihat baik (PC-Building) */
+    .guide-step {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem;
+    }
+    .step-number {
+        text-align: center;
+        width: 100%;
+        font-size: 2.5rem;
+    }
+}
+
+/* --- MEDIA QUERY TAMBAHAN UNTUK MOBILE (BARU DITAMBAHKAN) --- */
+@media (max-width: 600px) {
+    /* Mengubah semua grid ke 1 kolom untuk ponsel */
+    .pilar-grid,
+    .language-grid,
+    .tier-list-grid,
+    .platform-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* Mengubah padding dan ukuran font di hero */
+    .hero-section {
+        padding: 6rem 5% 4rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .uvp-text {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-content {
+        padding: 2rem 5%;
+    }
+    
+}
+/* ================================== */
+/* === MODIFIKASI Halaman Login BARU (Revisi) === */
+/* ================================== */
+
+/* 1. Video Background */
+#video-bg {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Pindahkan ke belakang konten */
+    object-fit: cover;
+    filter: brightness(0.6); /* Sedikit gelap agar teks lebih mudah dibaca */
+}
+
+/* 2. Glassmorphism untuk Login Card */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    background-color: transparent; 
+    transition: none;
+}
+
+.login-card {
+    /* Glassmorphism */
+    background-color: rgba(255, 255, 255, 0.15); /* Background transparan */
+    backdrop-filter: blur(15px); /* Efek blur/kaca */
+    -webkit-backdrop-filter: blur(15px); /* Dukungan Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Border tipis putih/transparan */
+    
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Bayangan lebih kuat */
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    
+    /* Warna Teks agar terbaca di atas background gelap/blur */
+    color: var(--dark-text); 
+    transition: none;
+}
+
+.login-card h2 {
+    color: var(--dark-primary);
+}
+
+.login-card p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 3. Styling Input (Standar) */
+.login-form input {
+    width: 100%; /* Lebar penuh */
+    padding: 1rem;
+    margin-bottom: 1.5rem; /* Jarak antar input */
+    border: 1px solid rgba(255, 255, 255, 0.4); 
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: rgba(0, 0, 0, 0.2); 
+    color: var(--dark-text);
+    transition: all var(--transition-fast);
+}
+
+.login-form input::placeholder {
+    /* Mengubah warna placeholder agar terlihat di atas background gelap */
+    color: rgba(255, 255, 255, 0.6); 
+}
+
+.login-form input:focus {
+    outline: none;
+    border-color: var(--dark-secondary);
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.8);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* 4. Penyesuaian Tombol (Button Full Width) */
+.login-button {
+    /* ⚠️ PENTING: Membuat tombol selebar input */
+    width: 100%; 
+    padding: 1rem;
+    
+    /* Styling Tombol */
+    background-color: var(--dark-secondary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+    transition: background-color var(--transition-fast), transform var(--transition-fast);
+}
+
+.login-button:hover {
+    background-color: #3e78c4;
+    transform: translateY(-2px);
+}
+
+.login-feedback {
+    margin-top: 1rem;
+    color: #ff8888;
+    font-weight: 600;
+}
+

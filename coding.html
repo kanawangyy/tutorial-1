@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✍️ Dasar Koding Praktis | The Tech Blueprint</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Gaya spesifik untuk halaman ini */
+        .content-section {
+            padding: 4rem 5% 6rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .concept-card {
+            background-color: var(--color-card-bg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--color-shadow);
+            border-right: 5px solid var(--color-primary);
+            transition: all var(--transition-fast);
+        }
+
+        .concept-card:hover {
+            transform: scale(1.01);
+            box-shadow: 0 8px 15px var(--color-shadow);
+        }
+
+        .concept-card h3 {
+            color: var(--color-primary);
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+
+        .language-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: center;
+        }
+
+        .language-card {
+            background-color: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--color-shadow);
+            border-bottom: 5px solid var(--color-secondary);
+        }
+
+        .lang-icon {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .language-card h4 {
+            font-size: 1.4rem;
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .language-card .role {
+            font-style: italic;
+            display: block;
+            margin-bottom: 1rem;
+            color: var(--color-text);
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body data-theme="light">
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">The Tech Blueprint <span class="accent-dot">.</span></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="pc-building.html" class="nav-link">💻 Rakit PC</a></li>
+                <li><a href="coding.html" class="nav-link">✍️ Koding</a></li>
+                <li><a href="hosting.html" class="nav-link">🌐 Hosting</a></li>
+                <li><button id="theme-toggle" class="nav-button" aria-label="Ganti Tema">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="hero-section" style="min-height: 50vh; text-align: left; background: none; padding-top: 10rem;">
+            <div class="hero-content">
+                <p class="fade-in-up">Pilar II</p>
+                <h1 class="slide-in-left">✍️ Dasar Koding Praktis</h1>
+                <p class="uvp-text slide-in-right">Memahami logika fundamental dan bahasa pemrograman yang digunakan untuk menciptakan website, aplikasi, dan otomatisasi.</p>
+                <a href="#konsep-inti" class="cta-button fade-in-up delay-1">
+                    Lihat Konsep Inti <span class="arrow">↓</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="konsep-inti" class="content-section">
+            <h2 class="section-title slide-in-left">Konsep Penting: Logika yang Membangun Software</h2>
+            <p class="section-subtitle slide-in-right">Sebelum menulis kode, pahami pilar-pilar logis yang ada di balik setiap program modern. Menguasai ini adalah kunci.</p>
+
+            <article class="concept-card shift-left delay-1">
+                <h3>1. Variabel dan Tipe Data (The Containers)</h3>
+                <p> **Variabel** dapat diibaratkan sebagai kotak penyimpanan bernama di memori komputer yang menampung data. Ketika Anda membuat variabel seperti `nama_pengguna = "Budi"`, Anda memberi nama kotak tersebut (`nama_pengguna`) dan mengisinya dengan data (`"Budi"`). Konsep ini sangat vital karena memungkinkan program untuk menyimpan, memodifikasi, dan mengakses informasi secara dinamis. Setiap variabel memiliki **Tipe Data** (seperti *string* untuk teks, *integer* untuk angka bulat, *boolean* untuk Benar/Salah). Memahami Tipe Data membantu Anda menghindari kesalahan logis dan memastikan program memproses informasi dengan benar—seperti memastikan Anda tidak mencoba mengalikan teks dengan angka. </p>
+            </article>
+
+            <article class="concept-card shift-left delay-2">
+                <h3>2. Struktur Kontrol: If-Else dan Loop (The Decision Makers)</h3>
+                <p> **Struktur Kontrol** adalah fondasi pengambilan keputusan dan pengulangan (repetisi) dalam kode. Pernyataan **If-Else** memungkinkan program memilih jalur eksekusi berdasarkan kondisi tertentu. Contoh: `JIKA suhu > 30 MAKA tampilkan "Panas" ELSE tampilkan "Normal"`. Sementara itu, **Loop** (*perulangan* seperti `for` atau `while`) memungkinkan program mengeksekusi blok kode yang sama berulang kali, menghemat waktu dan baris kode. Contoh: Mengulang tindakan yang sama untuk setiap item dalam daftar. Struktur kontrol adalah yang membuat program menjadi *pintar* dan otomatis.</p>
+            </article>
+
+            <article class="concept-card shift-left delay-3">
+                <h3>3. Fungsi dan Modularitas (The Builders)</h3>
+                <p> **Fungsi** adalah blok kode yang diberi nama dan dapat dipanggil kapan saja untuk melakukan tugas tertentu. Bayangkan fungsi sebagai resep masak: Anda bisa memanggil resep "Membuat Roti" kapan pun Anda ingin roti. Fungsi mendorong **Modularitas**, yang berarti memecah program besar yang kompleks menjadi unit-unit yang lebih kecil, terpisah, dan dapat dikelola. Ini membuat kode lebih mudah dibaca, diuji, diperbaiki, dan digunakan kembali (*reusable*), yang merupakan praktik terbaik dalam pengembangan perangkat lunak modern. Fungsi juga menerima **Argumen/Parameter** (bahan-bahan dalam resep) dan menghasilkan **Nilai Kembali** (*return value*).</p>
+            </article>
+
+            <h2 class="section-title slide-in-up">Bahasa Koding Fundamental</h2>
+            <p class="section-subtitle slide-in-up delay-1">Fokus pada tiga bahasa yang menjadi tulang punggung web dan otomatisasi.</p>
+
+            <div class="language-grid">
+                <div class="language-card scale-in delay-2">
+                    <span class="lang-icon">🛠️</span>
+                    <h4>HTML (HyperText Markup Language)</h4>
+                    <span class="role">Struktur & Kerangka</span>
+                    <p> Bahasa *markup* yang digunakan untuk mendefinisikan struktur dan konten halaman web (teks, gambar, tautan). HTML adalah fondasi yang wajib dikuasai.</p>
+                </div>
+                <div class="language-card scale-in delay-3">
+                    <span class="lang-icon">🎨</span>
+                    <h4>CSS (Cascading Style Sheets)</h4>
+                    <span class="role">Visual & Desain</span>
+                    <p> Bahasa yang mendeskripsikan bagaimana elemen HTML harus ditampilkan, mencakup warna, font, tata letak, dan animasi. CSS membuat web terlihat menarik.</p>
+                </div>
+                <div class="language-card scale-in delay-4">
+                    <span class="lang-icon">🧠</span>
+                    <h4>JavaScript (JS)</h4>
+                    <span class="role">Interaktivitas & Logika</span>
+                    <p> Bahasa pemrograman yang membuat halaman web menjadi interaktif dan dinamis. JS adalah *otak* yang menjalankan fungsionalitas di sisi klien (*front-end*).</p>
+                </div>
+            </div>
+
+            <h2 class="section-title slide-in-up">Sudah Menguasai Logika Koding?</h2>
+            <p class="slide-in-up">Langkah selanjutnya adalah mempublikasikan karyamu ke dunia. Pelajari tentang hosting dan domain!</p>
+            <a href="hosting.html" class="guide-cta fade-in-up delay-1">Lanjutkan ke Pilar Hosting!</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <h4>Navigasi Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="pc-building.html">Rakit PC</a></li>
+                    <li><a href="coding.html">Koding</a></li>
+                    <li><a href="hosting.html">Hosting</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter-section">
+                <h4>Langganan Blueprint</h4>
+                <p>Jangan sampai ketinggalan update terbaru komponen PC dan trick koding. Langganan Newsletter Gratis!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Anda" required aria-label="Masukkan Email untuk Newsletter">
+                    <button type="submit" class="submit-button">Langganan</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Tech Blueprint. All Rights Reserved.</p>
+            <p>Dibuat dengan 💙 dan Logika</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

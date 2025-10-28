@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tech Blueprint | Kuasa Teknologi di Tanganmu</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body data-theme="light">
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">The Tech Blueprint <span class="accent-dot">.</span></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="pc-building.html" class="nav-link">💻 Rakit PC</a></li>
+                <li><a href="coding.html" class="nav-link">✍️ Koding</a></li>
+                <li><a href="hosting.html" class="nav-link">🌐 Hosting</a></li>
+                <li><button id="logout-button" class="nav-button" style="display: none;">🚪</button></li> 
+                <li><button id="theme-toggle" class="nav-button" aria-label="Ganti Tema">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="content">
+        <section class="hero-section">
+            <div class="hero-content">
+                <h1 class="fade-in-up">Kuasa Teknologi di Tanganmu</h1>
+                <p class="uvp-text fade-in-up delay-1">Panduan lengkap yang memecah kompleksitas **Hardware**, **Software**, dan **Infrastruktur** menjadi langkah-langkah praktis yang dapat dikuasai siapa saja.</p>
+                <a href="#content-overview" class="cta-button fade-in-up delay-2">
+                    Mulai Eksplorasi <span class="arrow">→</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="content-overview" class="content-overview">
+            <h2 class="section-title slide-in-left">Pilar Konten Edukasi</h2>
+            <p class="section-subtitle slide-in-right">Pilih jalur yang Anda minati. Setiap pilar adalah sebuah perjalanan.</p>
+
+            <div class="pilar-grid">
+                <article class="pilar-card scale-in delay-1">
+                    <span class="pilar-icon">💻</span>
+                    <h3>PC Building 101:</h3>
+                    <p>Dari Kotak hingga Kinerja Tinggi. Pahami CPU, GPU, dan semua yang ada di dalamnya. Jadilah arsitek mesin Anda sendiri.</p>
+                    <a href="pc-building.html" class="pilar-link">Mulai Rakit PC →</a>
+                </article>
+                
+                <article class="pilar-card scale-in delay-2">
+                    <span class="pilar-icon">✍️</span>
+                    <h3>Dasar Koding Praktis:</h3>
+                    <p>Pelajari logika dasar pemrograman dan bahasa-bahasa fundamental (HTML, CSS, Python) untuk mulai menciptakan.</p>
+                    <a href="coding.html" class="pilar-link">Mulai Koding →</a>
+                </article>
+
+                <article class="pilar-card scale-in delay-3">
+                    <span class="pilar-icon">🌐</span>
+                    <h3>Hosting & Deployment:</h3>
+                    <p>Publikasikan website buatan Anda ke internet. Pahami Domain, Hosting, dan proses *live deployment*.</p>
+                    <a href="hosting.html" class="pilar-link">Mulai Hosting →</a>
+                </article>
+            </div>
+        </section>
+
+        <section class="start-guide">
+            <h2 class="section-title slide-in-up">Mulai Dari Mana?</h2>
+            <p class="section-subtitle slide-in-up delay-1">Bingung harus memulai? Pilih skenario yang paling menggambarkan diri Anda.</p>
+
+            <div class="guide-options">
+                <div class="guide-card shift-left delay-2">
+                    <h3>Jika Anda Seorang Gamers/Content Creator:</h3>
+                    <ul>
+                        <li>Ingin meningkatkan performa game.</li>
+                        <li>Membutuhkan mesin untuk *rendering* video.</li>
+                        <li>Anda membutuhkan upgrade performa PC.</li>
+                        <li>Ingin memahami hardware di balik pekerjaan developer.</li>
+                    </ul>
+                    <a href="pc-building.html" class="guide-cta">Lihat Panduan Perakitan!</a>
+                </div>
+
+                <div class="guide-card shift-left delay-3">
+                    <h3>Jika Anda Seorang Calon Developer/Creator Website:</h3>
+                    <ul>
+                        <li>Ingin membuat website portofolio sendiri.</li>
+                        <li>Tertarik pada karir di bidang teknologi.</li>
+                        <li>Ingin memahami hardware di balik pekerjaan developer.</li>
+                        <li>Membutuhkan upgrade performa PC.</li>
+                    </ul>
+                    <a href="coding.html" class="guide-cta">Mulai Belajar Koding!</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <h4>Navigasi Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="pc-building.html">Rakit PC</a></li>
+                    <li><a href="coding.html">Koding</a></li>
+                    <li><a href="hosting.html">Hosting</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter-section">
+                <h4>Langganan Blueprint</h4>
+                <p>Jangan sampai ketinggalan update terbaru komponen PC dan trick koding. Langganan Newsletter Gratis!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Anda" required aria-label="Masukkan Email untuk Newsletter">
+                    <button type="submit" class="submit-button">Langganan</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Tech Blueprint. All Rights Reserved.</p>
+            <p>Dibuat dengan 💙 dan Logika</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

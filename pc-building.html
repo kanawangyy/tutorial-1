@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💻 PC Building 101 | The Tech Blueprint</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Gaya spesifik untuk halaman ini */
+        .content-section {
+            padding: 4rem 5% 6rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .guide-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 3rem;
+            margin-bottom: 4rem;
+            padding: 2rem;
+            border-radius: 10px;
+            background-color: var(--color-card-bg);
+            box-shadow: 0 4px 10px var(--color-shadow);
+            transition: all var(--transition-slow);
+            border-left: 5px solid var(--color-secondary);
+        }
+
+        .step-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            width: 80px;
+            flex-shrink: 0;
+            text-align: right;
+            line-height: 1;
+        }
+
+        .step-text h3 {
+            color: var(--color-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .tier-list {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .tier-list-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tier-card {
+            background-color: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--color-shadow);
+            text-align: left;
+        }
+
+        .tier-card h4 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        .tier-card .tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .tag.low-end { background-color: #d1ecf1; color: #0087a3; }
+        .tag.mid-range { background-color: #fff3cd; color: #856404; }
+        .tag.high-end { background-color: #d4edda; color: #155724; }
+
+        /* Dark Mode overrides for specific tags */
+        body[data-theme='dark'] .tag.low-end { background-color: #1c4b57; color: #76d0e3; }
+        body[data-theme='dark'] .tag.mid-range { background-color: #4a401c; color: #ffd861; }
+        body[data-theme='dark'] .tag.high-end { background-color: #214f29; color: #b8e9c2; }
+    </style>
+</head>
+<body data-theme="light">
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">The Tech Blueprint <span class="accent-dot">.</span></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="pc-building.html" class="nav-link">💻 Rakit PC</a></li>
+                <li><a href="coding.html" class="nav-link">✍️ Koding</a></li>
+                <li><a href="hosting.html" class="nav-link">🌐 Hosting</a></li>
+                <li><button id="theme-toggle" class="nav-button" aria-label="Ganti Tema">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="hero-section" style="min-height: 50vh; text-align: left; background: none; padding-top: 10rem;">
+            <div class="hero-content">
+                <p class="fade-in-up">Pilar I</p>
+                <h1 class="slide-in-left">💻 PC Building 101</h1>
+                <p class="uvp-text slide-in-right">Memahami dan merakit komputer performa tinggi dari komponen-komponennya.</p>
+                <a href="#komponen-inti" class="cta-button fade-in-up delay-1">
+                    Lihat Komponen Inti <span class="arrow">↓</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="komponen-inti" class="content-section">
+            <h2 class="section-title slide-in-left">6 Komponen Inti Sebuah Komputer</h2>
+            <p class="section-subtitle slide-in-right">Mengenal *otak*, *jantung*, dan *saraf* dari mesin digital Anda.</p>
+
+            <div class="tier-list-grid">
+                <div class="tier-card scale-in delay-1">
+                    <span class="pilar-icon">🧠</span>
+                    <h4>CPU (Central Processing Unit)</h4>
+                    <p> **Otak Komputer.** Melakukan semua kalkulasi dan menjalankan instruksi program. Kecepatan diukur dalam GHz. Pilihan: Intel Core i5/i7/i9, AMD Ryzen 5/7/9. </p>
+                </div>
+                <div class="tier-card scale-in delay-2">
+                    <span class="pilar-icon">🎮</span>
+                    <h4>GPU (Graphics Card)</h4>
+                    <p> **Otak Visual.** Bertanggung jawab untuk *rendering* grafis (game, video, desain 3D). Krusial untuk *gaming* dan *content creation*. Pilihan: NVIDIA GeForce, AMD Radeon. </p>
+                </div>
+                <div class="tier-card scale-in delay-3">
+                    <span class="pilar-icon">💾</span>
+                    <h4>RAM (Random Access Memory)</h4>
+                    <p> **Memori Jangka Pendek.** Tempat penyimpanan sementara program yang sedang berjalan. Lebih besar RAM (misalnya 16GB, 32GB) = lebih banyak aplikasi bisa dibuka bersamaan. </p>
+                </div>
+                <div class="tier-card scale-in delay-4">
+                    <span class="pilar-icon">⚡</span>
+                    <h4>Motherboard (Mainboard)</h4>
+                    <p> **Saraf Pusat.** Papan sirkuit yang menghubungkan semua komponen (CPU, RAM, GPU, Storage). Ukuran dan *socket* harus sesuai dengan CPU. </p>
+                </div>
+                <div class="tier-card scale-in delay-5">
+                    <span class="pilar-icon">🗄️</span>
+                    <h4>Storage (SSD/HDD)</h4>
+                    <p> **Memori Jangka Panjang.** Tempat menyimpan sistem operasi, program, dan file. **SSD** (Solid State Drive) jauh lebih cepat dari **HDD** (Hard Disk Drive) dan wajib digunakan. </p>
+                </div>
+                <div class="tier-card scale-in delay-6">
+                    <span class="pilar-icon">🔌</span>
+                    <h4>PSU (Power Supply Unit)</h4>
+                    <p> **Jantung Komputer.** Mengubah listrik AC dinding menjadi listrik DC yang digunakan komponen. Pastikan Watt (*daya*) cukup dan memiliki sertifikasi *80+ Bronze/Gold*. </p>
+                </div>
+            </div>
+
+            <div class="tier-list">
+                <h2 class="section-title slide-in-up">Contoh Tier List Perakitan</h2>
+                <p class="section-subtitle slide-in-up delay-1">Rekomendasi *build* berdasarkan tujuan dan anggaran.</p>
+                <div class="tier-list-grid">
+                    <div class="tier-card fade-in-up delay-2">
+                        <span class="tag low-end">Low-End (Budget)</span>
+                        <h4>1080P Gaming / Daily Use</h4>
+                        <p>Fokus pada performa dasar. Cocok untuk game eSports ringan, *browsing*, dan pekerjaan kantor. Biasanya menggunakan CPU dan GPU level pemula.</p>
+                        <p> *Rekomendasi:* Ryzen 5, 16GB RAM, RTX 4060/RX 6600. </p>
+                    </div>
+                    <div class="tier-card fade-in-up delay-3">
+                        <span class="tag mid-range">Mid-Range (Performance)</span>
+                        <h4>1440P Gaming / Content Creation Dasar</h4>
+                        <p>Keseimbangan antara harga dan kinerja. Mampu menjalankan game modern di resolusi tinggi dan pekerjaan *rendering* tingkat menengah.</p>
+                        <p> *Rekomendasi:* Core i5/i7, 32GB RAM, RTX 4070/RX 7700 XT. </p>
+                    </div>
+                    <div class="tier-card fade-in-up delay-4">
+                        <span class="tag high-end">High-End (Pro/4K)</span>
+                        <h4>4K Gaming / Profesional Editing</h4>
+                        <p>Performa maksimal tanpa kompromi. Digunakan untuk resolusi 4K, VR, atau *workstation* profesional dengan *rendering* berat.</p>
+                        <p> *Rekomendasi:* Core i9/Ryzen 9, 64GB RAM, RTX 4090/RX 7900 XTX. </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="langkah-perakitan" class="content-section">
+            <h2 class="section-title slide-in-left">Panduan Perakitan Langkah-demi-Langkah</h2>
+            <p class="section-subtitle slide-in-right">Ikuti 6 langkah utama ini untuk menyalakan PC rakitan pertama Anda dengan aman dan benar.</p>
+
+            <div class="guide-step fade-in-up delay-1">
+                <span class="step-number">01</span>
+                <div class="step-text">
+                    <h3>Persiapan dan Pemasangan CPU/RAM</h3>
+                    <p>Langkah awal yang krusial. Pasang **CPU** dengan hati-hati ke *socket* Motherboard, pastikan tanda panah atau segitiga sejajar. Setelah itu, pasang **RAM** pada slot yang benar (biasanya A2/B2 atau mengikuti buku manual *dual-channel*). Lakukan ini di luar *casing* untuk meminimalisir risiko menjatuhkan alat atau komponen. Jangan lupa oleskan *Thermal Paste* dan pasang *CPU Cooler* Anda sebelum memasukkan Motherboard ke dalam *casing*.</p>
+                </div>
+            </div>
+
+            <div class="guide-step fade-in-up delay-2">
+                <span class="step-number">02</span>
+                <div class="step-text">
+                    <h3>Pemasangan Motherboard dan Kabel Depan</h3>
+                    <p>Pasang Motherboard ke dalam *casing* dengan hati-hati menggunakan *standoff* yang tepat. Setelah itu, sambungkan semua kabel panel depan (*power button*, *reset*, USB, audio). Ini adalah langkah yang paling rumit, pastikan Anda merujuk pada buku manual *casing* dan Motherboard Anda agar tidak terjadi korsleting.</p>
+                </div>
+            </div>
+
+            <div class="guide-step fade-in-up delay-3">
+                <span class="step-number">03</span>
+                <div class="step-text">
+                    <h3>Instalasi GPU dan Kartu Ekspansi</h3>
+                    <p>Pasang **GPU** (kartu grafis) ke slot **PCIe** utama (biasanya slot teratas). Dorong dengan kuat hingga terdengar bunyi "klik" dari pengunci slot. Jika Anda memiliki SSD **NVMe**, pastikan untuk memasangnya di slot M.2 yang sesuai sebelum memasang GPU, karena GPU sering kali menutupi slot tersebut.</p>
+                </div>
+            </div>
+            
+            <div class="guide-step fade-in-up delay-4">
+                <span class="step-number">04</span>
+                <div class="step-text">
+                    <h3>Pemasangan Power Supply (PSU)</h3>
+                    <p>Letakkan **PSU** (Power Supply Unit) di tempat yang ditentukan di *casing* Anda. Sambungkan kabel daya utama (24-pin Motherboard dan 8-pin CPU) serta kabel daya untuk GPU dan *storage* (SSD/HDD). Manajemen kabel adalah kunci di sini; gunakan lubang-lubang di *casing* untuk merapikan kabel di bagian belakang, memastikan aliran udara yang optimal.</p>
+                </div>
+            </div>
+
+            <div class="guide-step fade-in-up delay-5">
+                <span class="step-number">05</span>
+                <div class="step-text">
+                    <h3>Storage dan Manajemen Kabel Akhir</h3>
+                    <p>Pasang perangkat *storage* Anda (SSD SATA, Hard Drive) di *bay* yang tersedia. Sambungkan kabel daya dan data SATA. Luangkan waktu untuk merapikan sisa kabel. Kabel yang rapi tidak hanya terlihat bagus, tetapi juga meningkatkan aliran udara, menjaga komponen Anda tetap dingin.</p>
+                </div>
+            </div>
+
+            <div class="guide-step fade-in-up delay-6">
+                <span class="step-number">06</span>
+                <div class="step-text">
+                    <h3>Final Check dan Boot Pertama</h3>
+                    <p>Cek ulang semua koneksi. Pastikan RAM terkunci, CPU Cooler terpasang dengan aman, dan semua kabel daya terpasang dengan benar. Tutup *casing*. Hubungkan monitor, *keyboard*, dan *mouse*. Tekan tombol *power*. Jika semua kipas berputar dan Anda melihat tampilan di monitor (masuk ke BIOS), **SELAMAT**, Anda berhasil merakit PC Anda sendiri!</p>
+                </div>
+            </div>
+
+            <h2 class="section-title slide-in-up">Siap untuk *Boot* Pertama?</h2>
+            <p class="slide-in-up">Setelah PC Anda menyala, saatnya menginstal sistem operasi dan mulai belajar koding!</p>
+            <a href="coding.html" class="guide-cta fade-in-up delay-1">Lanjutkan ke Pilar Koding!</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <h4>Navigasi Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="pc-building.html">Rakit PC</a></li>
+                    <li><a href="coding.html">Koding</a></li>
+                    <li><a href="hosting.html">Hosting</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter-section">
+                <h4>Langganan Blueprint</h4>
+                <p>Jangan sampai ketinggalan update terbaru komponen PC dan trick koding. Langganan Newsletter Gratis!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Anda" required aria-label="Masukkan Email untuk Newsletter">
+                    <button type="submit" class="submit-button">Langganan</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Tech Blueprint. All Rights Reserved.</p>
+            <p>Dibuat dengan 💙 dan Logika</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

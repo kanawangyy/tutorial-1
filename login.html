@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔒 Login | The Tech Blueprint</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* CSS Tambahan untuk Halaman Login */
+        /* Hapus atau biarkan bagian ini kosong, semua styling akan dipindahkan ke style.css */
+        /* Anda *HARUS* menyalin CSS tambahan di bawah ke style.css */
+    </style>
+</head>
+<body>
+    <video autoplay muted loop id="video-bg">
+        <source src="videoplayback.webm" type="video/webm">
+        Browser Anda tidak mendukung tag video.
+    </video>
+
+    <div class="login-container">
+        <div class="login-card fade-in-up">
+            <h2>Selamat Datang</h2>
+            <p>Silahkan login terlebih dahulu</p>
+            
+                        <form id="login-form" class="login-form">
+                
+                <input type="text" id="username" placeholder="Username" required>
+                
+                <input type="password" id="password" placeholder="Password" required>
+
+                <button type="submit" class="login-button">Masuk</button>
+                <p id="login-feedback" class="login-feedback"></p>
+            </form>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

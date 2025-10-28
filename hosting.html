@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌐 Website Live: Hosting & Deployment | The Tech Blueprint</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Zen+Kaku+Gothic+Antique:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* Gaya spesifik untuk halaman ini */
+        .content-section {
+            padding: 4rem 5% 6rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .deployment-guide {
+            margin-bottom: 3rem;
+        }
+
+        .deployment-guide h3 {
+            color: var(--color-secondary);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid var(--color-secondary);
+            padding-left: 1rem;
+        }
+
+        .deployment-steps {
+            background-color: var(--color-card-bg);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--color-shadow);
+            margin-bottom: 2rem;
+            border-right: 5px solid var(--color-primary);
+        }
+
+        .platform-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .platform-card {
+            background-color: var(--color-card-bg);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px var(--color-shadow);
+            text-align: left;
+            border-top: 5px solid var(--color-secondary);
+        }
+
+        .platform-card h4 {
+            font-size: 1.4rem;
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .platform-card .tag {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .tag.gratis { background-color: #d1ecf1; color: #0087a3; }
+        .tag.murah { background-color: #fff3cd; color: #856404; }
+        .tag.profesional { background-color: #d4edda; color: #155724; }
+        
+        /* Dark Mode overrides for specific tags */
+        body[data-theme='dark'] .tag.gratis { background-color: #1c4b57; color: #76d0e3; }
+        body[data-theme='dark'] .tag.murah { background-color: #4a401c; color: #ffd861; }
+        body[data-theme='dark'] .tag.profesional { background-color: #214f29; color: #b8e9c2; }
+    </style>
+</head>
+<body data-theme="light">
+    <header class="main-header">
+        <div class="logo">
+            <a href="index.html">The Tech Blueprint <span class="accent-dot">.</span></a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="pc-building.html" class="nav-link">💻 Rakit PC</a></li>
+                <li><a href="coding.html" class="nav-link">✍️ Koding</a></li>
+                <li><a href="hosting.html" class="nav-link">🌐 Hosting</a></li>
+                <li><button id="theme-toggle" class="nav-button" aria-label="Ganti Tema">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <section class="hero-section" style="min-height: 50vh; text-align: left; background: none; padding-top: 10rem;">
+            <div class="hero-content">
+                <p class="fade-in-up">Pilar III</p>
+                <h1 class="slide-in-left">🌐 Hosting & Deployment</h1>
+                <p class="uvp-text slide-in-right">Mempelajari cara mempublikasikan proyek koding Anda ke internet agar dapat diakses oleh siapa saja, kapan saja.</p>
+                <a href="#pengenalan-hosting" class="cta-button fade-in-up delay-1">
+                    Mulai Publikasi <span class="arrow">↓</span>
+                </a>
+            </div>
+        </section>
+
+        <section id="pengenalan-hosting" class="content-section">
+            <h2 class="section-title slide-in-left">Pengenalan Hosting: Rumah Digital Anda</h2>
+            <p class="section-subtitle slide-in-right">Pahami dua elemen kunci yang membuat website dapat ditemukan dan berjalan 24/7.</p>
+
+            <div class="deployment-guide fade-in-up delay-1">
+                <h3>Apa itu Hosting?</h3>
+                <p style="text-align: justify;"> **Hosting** adalah layanan yang menyediakan ruang di server fisik di internet. Bayangkan ini sebagai **rumah digital** tempat semua file website Anda disimpan. Tanpa hosting, website Anda hanya ada di komputer lokal Anda. Jenis hosting beragam, mulai dari Shared Hosting (murah, untuk pemula) hingga VPS (Virtual Private Server) dan Cloud Hosting (fleksibel, untuk profesional). Pemilihan hosting harus disesuaikan dengan kebutuhan lalu lintas dan kompleksitas website Anda. </p>
+            </div>
+
+            <div class="deployment-guide fade-in-up delay-2">
+                <h3>Apa itu Domain?</h3>
+                <p style="text-align: justify;"> **Domain** adalah alamat unik website Anda (seperti `thetechblueprint.com`). Ini adalah identitas yang memudahkan orang menemukan Anda, daripada harus menghafal alamat IP numerik (*Internet Protocol address*) server Anda. Domain terdiri dari nama (misalnya, *thetechblueprint*) dan TLD (*Top-Level Domain*, misalnya, *.com* atau *.id*). Setelah Anda membeli domain, Anda perlu **mengarahkan** domain tersebut ke server hosting Anda.</p>
+            </div>
+
+
+            <h2 class="section-title slide-in-left">Pilihan Platform Hosting Populer</h2>
+            <p class="section-subtitle slide-in-right">Pilih yang sesuai dengan tingkat keahlian dan anggaran Anda. Dari gratis hingga profesional.</p>
+
+            <div class="platform-grid">
+                <div class="platform-card scale-in delay-3">
+                    <span class="tag gratis">Gratis / Personal</span>
+                    <h4>GitHub Pages / Netlify</h4>
+                    <p>Ideal untuk *static site* (HTML, CSS, JS murni). Gratis, mudah dihubungkan dengan Git. Batasan: tidak cocok untuk backend/database.</p>
+                </div>
+                <div class="platform-card scale-in delay-4">
+                    <span class="tag murah">Murah / Shared Hosting</span>
+                    <h4>Niagahoster / Hostinger</h4>
+                    <p>Sangat cocok untuk pemula dan website bisnis kecil. Menyediakan CPanel untuk manajemen yang mudah. Performa bisa terbatas.</p>
+                </div>
+                <div class="platform-card scale-in delay-5">
+                    <span class="tag profesional">Profesional / Skalabilitas Tinggi</span>
+                    <h4>AWS / Google Cloud / Vultr</h4>
+                    <p>Dibutuhkan keahlian teknis lebih. Memberikan kontrol penuh atas server (VPS). Sangat skalabel dan powerful.</p>
+                </div>
+            </div>
+
+            <h2 class="section-title slide-in-up">Selamat! Anda Selesai!</h2>
+            <p class="slide-in-up">Anda kini menguasai Hardware, Software, dan Infrastruktur. Saatnya kembali ke beranda untuk meninjau semua pilar.</p>
+            <a href="index.html" class="guide-cta fade-in-up delay-1">Kembali ke Beranda</a>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-nav">
+                <h4>Navigasi Cepat</h4>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="pc-building.html">Rakit PC</a></li>
+                    <li><a href="coding.html">Koding</a></li>
+                    <li><a href="hosting.html">Hosting</a></li>
+                </ul>
+            </div>
+
+            <div class="newsletter-section">
+                <h4>Langganan Blueprint</h4>
+                <p>Jangan sampai ketinggalan update terbaru komponen PC dan trick koding. Langganan Newsletter Gratis!</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Email Anda" required aria-label="Masukkan Email untuk Newsletter">
+                    <button type="submit" class="submit-button">Langganan</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 The Tech Blueprint. All Rights Reserved.</p>
+            <p>Dibuat dengan 💙 dan Logika</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
